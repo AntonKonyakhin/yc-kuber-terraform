@@ -1,0 +1,12 @@
+---
+- name: Install WireGuard
+  hosts: test
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Install WireGuard
+      ansible.builtin.apt:
+        state: present
+        pkg:
+         - wireguard
+        update_cache: true
